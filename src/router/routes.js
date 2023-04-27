@@ -1,15 +1,21 @@
 export const routes = [
     {
-        path: "/",
-        // redirect: {},
-    },
-    {
-        name:"JSplumbTest",
-        path: "/jsplumbTest",
-        component: () => import('../pages/jsplumbTest/index.vue'),
+        name:"First",
+        path:"/first",
         meta: {
             icon:"House",
-            content:"JSplumb测试"
-        }
-    }
+            title:"Test菜单"
+        },
+        children:[
+            {
+                name:"TestOne",
+                path: "TestOne",
+                component: () => import('../pages/jsplumbTest/index.vue'),
+                meta: {
+                    title:"JSPlumb测试"
+                }
+            }
+        ]
+    },
+
 ]

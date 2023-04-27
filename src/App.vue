@@ -5,44 +5,59 @@
         <div class="head">
           <div>奥里给给</div>
         </div>
-        <el-menu background-color="#bed5ff" text-color="#000" :router="true">
-          <el-sub-menu index="1">
-            <template #title>
-              <span>Dashboard</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/account">
-                <el-icon><icon-ep-House /></el-icon>
-                修改密码
-              </el-menu-item>
-            </el-menu-item-group>
-          </el-sub-menu>
-          <el-sub-menu index="2">
-            <template #title>
-              <span>首页配置</span>
-            </template>
-            <el-menu-item-group> </el-menu-item-group>
-          </el-sub-menu>
-          <el-sub-menu index="3">
-            <template #title>
-              <span>模块管理</span>
-            </template>
-            <el-menu-item-group> </el-menu-item-group>
-          </el-sub-menu>
-          <el-sub-menu index="4">
-            <template #title>
-              <span>系统管理</span>
-            </template>
-            <el-menu-item-group> </el-menu-item-group>
-          </el-sub-menu>
-        </el-menu>
+       <div class="menus">
+         <el-scrollbar>
+           <el-menu
+               default-active="2"
+               class="el-menu-vertical-demo"
+               background-color="#222832"
+               text-color="#fff"
+               :router="true"
+           >
+             <el-sub-menu index="1">
+               <template #title>
+                 <el-icon><ep-location /></el-icon>
+                 <span>Navigator One</span>
+               </template>
+               <el-menu-item-group title="Group One">
+                 <el-menu-item index="1-1">item one</el-menu-item>
+                 <el-menu-item index="1-2">item two</el-menu-item>
+               </el-menu-item-group>
+               <el-menu-item-group title="Group Two">
+                 <el-menu-item index="1-3">item three</el-menu-item>
+               </el-menu-item-group>
+               <el-sub-menu index="1-4">
+                 <template #title>item four</template>
+                 <el-menu-item index="1-4-1">item one</el-menu-item>
+               </el-sub-menu>
+             </el-sub-menu>
+             <el-menu-item index="2">
+               <el-icon><icon-menu /></el-icon>
+               <span>Navigator Two</span>
+             </el-menu-item>
+             <el-menu-item index="3" disabled>
+               <el-icon><document /></el-icon>
+               <span>Navigator Three</span>
+             </el-menu-item>
+             <el-menu-item index="4">
+               <el-icon><setting /></el-icon>
+               <span>Navigator Four</span>
+             </el-menu-item>
+             <el-menu-item index="4">
+               <el-icon><setting /></el-icon>
+               <span>Navigator Four</span>
+             </el-menu-item>
+           </el-menu>
+         </el-scrollbar>
+       </div>
       </el-aside>
       <el-container class="content">
         <div class="main">
           <KeepAlive>
+          <el-scrollbar>
             <router-view />
+          </el-scrollbar>
           </KeepAlive>
-          {{ routes }}
         </div>
       </el-container>
     </el-container>
@@ -61,8 +76,8 @@ import { routes } from "@/router/routes.js";
   height: 100vh;
 }
 .aside {
-  width: 200px !important;
-  background-color: #bed5ff;
+  width: 200px;
+  background-color: #222832;
 }
 .head {
   display: flex;
@@ -73,21 +88,12 @@ import { routes } from "@/router/routes.js";
 .head > div {
   display: flex;
   align-items: center;
+  color: #fff
+}
+.menus{
+  height: calc(100vh - 50px);
 }
 
-.head img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-.head span {
-  font-size: 20px;
-  color: #ffffff;
-}
-.line {
-  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -95,40 +101,7 @@ import { routes } from "@/router/routes.js";
   overflow: hidden;
 }
 .main {
-  height: calc(100vh - 100px);
   overflow: auto;
   padding: 10px;
-}
-</style>
-
-<style>
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.el-menu {
-  border-right: none !important;
-}
-.el-submenu {
-  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.el-submenu:first-child {
-  border-top: none;
-}
-.el-submenu [class^="el-icon-"] {
-  vertical-align: -1px !important;
-}
-a {
-  color: #409eff;
-  text-decoration: none;
-}
-.el-pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-.el-popper__arrow {
-  display: none;
 }
 </style>
