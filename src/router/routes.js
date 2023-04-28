@@ -1,3 +1,5 @@
+const JsplumbTest = () => import('../pages/jsplumbTest/index.vue');
+
 export const routes = [
     {
         name:"First",
@@ -10,7 +12,7 @@ export const routes = [
             {
                 name:"TestOne",
                 path: "testOne",
-                component: () => import('../pages/jsplumbTest/index.vue'),
+                component: JsplumbTest,
                 meta: {
                     title:"JSPlumb测试"
                 }

@@ -11,7 +11,6 @@
           <el-scrollbar>
             <el-menu
               style="height: calc(100vh - 50px)"
-              default-active="2"
               class="el-menu-vertical-demo"
               background-color="#222832"
               text-color="#fff"
@@ -54,11 +53,20 @@
       </el-aside>
       <el-container class="content">
         <div class="main">
-          <KeepAlive>
-            <el-scrollbar>
-              <router-view />
-            </el-scrollbar>
-          </KeepAlive>
+          <el-scrollbar>
+            <RouterView v-slot="{ Component }">
+              <template v-if="Component">
+                <Transition mode="out-in">
+                  <KeepAlive>
+                      <component :is="Component"></component>
+                  </KeepAlive>
+                </Transition>
+              </template>
+              <template v-else>
+                <loading></loading>
+              </template>
+            </RouterView>
+          </el-scrollbar>
         </div>
       </el-container>
     </el-container>
