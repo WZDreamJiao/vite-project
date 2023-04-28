@@ -4,8 +4,7 @@
 //         console.log(path, mod);
 //     });
 // }
-const modules = import.meta.glob("@/assets/icons/*.svg", { as: "raw",eager: true });
-
+const modules = import.meta.glob("@/assets/icons/*.svg", {as: "raw", eager: true});
 
 
 export const getIcon = (name) => {
