@@ -9,7 +9,7 @@ export const routes = [
         children:[
             {
                 name:"TestOne",
-                path: "TestOne",
+                path: "testOne",
                 component: () => import('../pages/jsplumbTest/index.vue'),
                 meta: {
                     title:"JSPlumb测试"

@@ -6,7 +6,9 @@
 // }
 const modules = import.meta.glob("@/assets/icons/*.svg", { as: "raw",eager: true });
 
-const getIcon = (name) => {
+
+
+export const getIcon = (name) => {
     if (modules[`/src/assets/icons/${name}.svg`]) {
         return modules[`/src/assets/icons/${name}.svg`].replace("<svg ", '<svg fill="currentColor" ')
     } else {
@@ -15,4 +17,4 @@ const getIcon = (name) => {
 };
 
 
-export default getIcon
+

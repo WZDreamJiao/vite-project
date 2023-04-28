@@ -1,5 +1,6 @@
 <template>
   <div class="tables" id="container">
+    <el-icon class="mr8"><large-biaoqian></large-biaoqian></el-icon>
     <el-table :data="list1" style="margin-right: 150px">
       <el-table-column prop="name" label="Name" />
       <el-table-column label="nodeId">
@@ -114,7 +115,7 @@ const list2 = reactive([
 const showPlumb = () => {
   jsPlumb_instance = $jsPlumb.getInstance({
     Container: "container", // 选择器id
-    EndpointStyle: { radius: 4, fill: "#000" }, // 端点样式
+    EndpointStyle: { radius: 4, fill: "#fff",stroke: "#276EE5", strokeWidth: 2 }, // 端点样式
     PaintStyle: { stroke: "#276EE5", strokeWidth: 2 }, // 绘画样式，默认8px线宽  #456
     HoverPaintStyle: { fillStyle: "red", strokeStyle: "red" }, // 默认悬停样式  默认为null
     ConnectionOverlays: [
@@ -137,7 +138,7 @@ const showPlumb = () => {
     DrapOptions: { cursor: "crosshair", zIndex: 2000 },
   });
 
-  console.log(jsPlumb_instance);
+
 
   jsPlumb_instance.batch(() => {
     for (let i = 0; i < list1.length; i++) {
@@ -152,8 +153,8 @@ const showPlumb = () => {
   const data = document.getElementsByName("data");
   // console.log(JSON.stringify(joint));
   // console.log(JSON.stringify(data));
-  console.log(joint);
-  console.log(data);
+  // console.log(joint);
+  // console.log(data);
 
   jsPlumb_instance.setSourceEnabled(joint, true);
   jsPlumb_instance.setTargetEnabled(data, true);
@@ -161,7 +162,7 @@ const showPlumb = () => {
   jsPlumb_instance.setDraggable(data, false); // 是否支持拖拽
 
   jsPlumb_instance.bind("click", (conn, originalEvent) => {
-    console.log(conn);
+    // console.log(conn);
     jsPlumb_instance.deleteConnection(conn);
   });
 };

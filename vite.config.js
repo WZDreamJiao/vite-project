@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import svgLoader from 'vite-svg-loader'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import path from 'path'
@@ -14,10 +15,11 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    svgLoader(),
     AutoImport({
       include: [
         /\.[tj]sx?$/,
-        /\.vue$/, /\.vue\?vue/, 
+        /\.vue$/, /\.vue\?vue/,
       ],
       imports: ['vue', 'vue-router'],
       resolvers: [
@@ -36,7 +38,7 @@ export default defineConfig({
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          prefix: 'icon',
+          prefix: false,
           enabledCollections: ['ep'],
           alias: {
             small: 'icon-small',
@@ -50,7 +52,7 @@ export default defineConfig({
           ],
         }),
       ],
-      dts: "./src/components.d.ts", 
+      dts: "./src/components.d.ts",
     }),
     Icons({
       autoInstall: true,
@@ -69,6 +71,7 @@ export default defineConfig({
         ),
       },
       iconCustomizer(collection, icon, props) {
+        console.log(collection, icon, props);
         if (collection === 'icon-small') {
           props.width = '2em'
           props.height = '2em'
@@ -91,7 +94,7 @@ export default defineConfig({
       // },
     }),
   ],
-  
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')

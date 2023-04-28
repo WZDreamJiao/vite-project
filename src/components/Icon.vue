@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+      <el-icon v-html="getIcon(`${name}`)"></el-icon>
+  </div>
 </template>
 
 <script setup>

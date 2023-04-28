@@ -6,3 +6,14 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+.mr4{
+    margin-right: 4px;
+
+}
+.mr8{
+    margin-right: 8px;
+}
+.ml8{
+    margin-left: 8px;
+}
