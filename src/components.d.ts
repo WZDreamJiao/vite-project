@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Icon: typeof import('./components/Icon.vue')['default']
+    JSPDemo: typeof import('./components/JSPDemo.vue')['default']
     LargeBiaoqian: typeof import('~icons/icon-large/biaoqian')['default']
     Loading: typeof import('./components/Loading.vue')['default']
     MiddleVite: typeof import('~icons/icon-middle/vite')['default']

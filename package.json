@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antv/g6": "^4.8.13",
     "@element-plus/icons-vue": "^2.1.0",
     "element-plus": "^2.3.4",
     "jsplumb": "^2.15.6",
@@ -25,6 +26,7 @@
     "unplugin-auto-import": "^0.15.3",
     "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "^0.24.1",
-    "vite": "^4.2.0"
+    "vite": "^4.2.0",
+    "vite-plugin-leader-line": "^1.0.0"
   }
 }
