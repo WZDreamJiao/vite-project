@@ -1,29 +1,39 @@
 const JsplumbTest = () => import('../pages/jsplumbTest/index.vue');
 const LeaderLineTest = () => import('../pages/leaderLine/index.vue');
+const CrossComponentSlots = () => import('../pages/crossComponentSlots/index.vue');
+
 
 export const routes = [
     {
-        name:"First",
-        path:"/first",
+        name: "TestMenu",
+        path: "/TestMenu",
         meta: {
-            icon:"House",
-            title:"Test菜单"
+            icon: "House",
+            title: "Test菜单"
         },
-        children:[
+        children: [
             {
-                name:"TestOne",
-                path: "testOne",
+                name: "JSPlumb",
+                path: "JSPlumb",
                 component: JsplumbTest,
                 meta: {
-                    title:"JSPlumb测试"
+                    title: "JSPlumb测试"
                 }
             },
             {
-                name:"TestTwo",
-                path: "testTwo",
+                name: "LeaderLine",
+                path: "LeaderLine",
                 component: LeaderLineTest,
                 meta: {
-                    title:"leaderLine测试"
+                    title: "LeaderLine测试"
+                }
+            },
+            {
+                name: "CrossSlots",
+                path: "CrossSlots",
+                component: CrossComponentSlots,
+                meta: {
+                    title: "插槽测试"
                 }
             }
         ]

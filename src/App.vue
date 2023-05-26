@@ -20,6 +20,12 @@
                 :collapse="isCollapse"
                 :defaultActive="defaultActive"
             >
+              <el-menu-item index="/">
+                <el-icon>
+                  <middle-vue></middle-vue>
+                </el-icon>
+                <span>首页</span>
+              </el-menu-item>
               <el-sub-menu :index="route.path" v-for="route in routes">
                 <template #title>
                   <el-icon>
@@ -37,20 +43,20 @@
                   <span> {{ item.meta.title }}</span>
                 </el-menu-item>
               </el-sub-menu>
-              <el-sub-menu index="/1-4">
-                <template #title>
-                  <el-icon class="mr8">
-                    <large-biaoqian></large-biaoqian>
-                  </el-icon>
-                  <span>item four</span>
-                </template>
-                <el-menu-item index="/1-4-1">
-                  <el-icon class="mr8">
-                    <large-biaoqian></large-biaoqian>
-                  </el-icon>
-                  <span>item one</span>
-                </el-menu-item>
-              </el-sub-menu>
+              <!--              <el-sub-menu index="/1-4">-->
+              <!--                <template #title>-->
+              <!--                  <el-icon class="mr8">-->
+              <!--                    <large-biaoqian></large-biaoqian>-->
+              <!--                  </el-icon>-->
+              <!--                  <span>item four</span>-->
+              <!--                </template>-->
+              <!--                <el-menu-item index="/1-4-1">-->
+              <!--                  <el-icon class="mr8">-->
+              <!--                    <large-biaoqian></large-biaoqian>-->
+              <!--                  </el-icon>-->
+              <!--                  <span>item one</span>-->
+              <!--                </el-menu-item>-->
+              <!--              </el-sub-menu>-->
             </el-menu>
           </el-scrollbar>
         </div>
@@ -102,7 +108,7 @@ const handleCollapse = () => {
 
 .aside {
   width: 200px;
-  /* background-color: #222832; */
+  background-color: #222832;
 }
 
 .head {
