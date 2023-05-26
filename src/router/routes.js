@@ -1,6 +1,7 @@
-const JsplumbTest = () => import('../pages/jsplumbTest/index.vue');
+const Jsplumb = () => import('../pages/jsPlumb/index.vue');
 const LeaderLineTest = () => import('../pages/leaderLine/index.vue');
 const CrossComponentSlots = () => import('../pages/crossComponentSlots/index.vue');
+const Codemirror = () => import('../pages/codemirror/index.vue');
 
 
 export const routes = [
@@ -15,7 +16,7 @@ export const routes = [
             {
                 name: "JSPlumb",
                 path: "JSPlumb",
-                component: JsplumbTest,
+                component: Jsplumb,
                 meta: {
                     title: "JSPlumb测试"
                 }
@@ -34,6 +35,14 @@ export const routes = [
                 component: CrossComponentSlots,
                 meta: {
                     title: "插槽测试"
+                }
+            },
+            {
+                name: "Codemirror",
+                path: "Codemirror",
+                component: Codemirror,
+                meta: {
+                    title: "Codemirror测试"
                 }
             }
         ]
