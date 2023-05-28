@@ -2,6 +2,8 @@ const Jsplumb = () => import('../pages/jsPlumb/index.vue');
 const LeaderLineTest = () => import('../pages/leaderLine/index.vue');
 const CrossComponentSlots = () => import('../pages/crossComponentSlots/index.vue');
 const Codemirror = () => import('../pages/codemirror/index.vue');
+const ComplexAnimation = () => import("../pages/complexAnimation/index.vue")
+const PictureScrolling = () => import("../pages/PictureScrolling/index.vue")
 
 
 export const routes = [
@@ -44,7 +46,23 @@ export const routes = [
                 meta: {
                     title: "Codemirror测试"
                 }
-            }
+            },
+            {
+                name: "ComplexAnimation",
+                path: "ComplexAnimation",
+                component: ComplexAnimation,
+                meta: {
+                    title: "复杂动画"
+                }
+            },
+            {
+                name: "PictureScrolling",
+                path: "PictureScrolling",
+                component: PictureScrolling,
+                meta: {
+                    title: "图片滚动"
+                }
+            },
         ]
     },
 
