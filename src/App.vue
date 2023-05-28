@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <el-container class="container">
+    <el-container class="app-container">
       <el-aside class="aside">
         <div class="head" @click="handleCollapse">
           <el-icon class="mr8">
@@ -102,7 +102,7 @@ const handleCollapse = () => {
   background-color: #ffffff;
 }
 
-.container {
+.app-container {
   height: 100vh;
 }
 

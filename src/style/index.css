@@ -7,13 +7,19 @@ body {
     box-sizing: border-box;
 }
 
-.mr4{
+.container {
+    height: calc(100vh - 20px);
+}
+
+.mr4 {
     margin-right: 4px;
 
 }
-.mr8{
+
+.mr8 {
     margin-right: 8px;
 }
-.ml8{
+
+.ml8 {
     margin-left: 8px;
 }
