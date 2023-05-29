@@ -10,7 +10,6 @@ const images = [
   "../src/assets/images/03.jpg",
   "../src/assets/images/11.jpg",
   "../src/assets/images/12.jpg",
-  "../src/assets/images/13.jpg",
   "../src/assets/images/15.jpg",
 ]
 const scroll_container = ref()
@@ -72,28 +71,53 @@ onMounted(() => {
   position: relative;
 }
 
-:deep(.item) {
+
+</style>
+<style>
+.item {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  transition: 1s ease-in-out;
 }
 
-:deep(.item img) {
+.item img {
   position: absolute;
   width: 100%;
   height: calc(100vh - 20px);
   object-fit: cover;
+  transition: 1s ease-in-out;
 }
 
-:deep(.prev) {
+.item.prev {
   z-index: 1;
   height: 0;
 }
 
-:deep(.next) {
+.item.next {
   z-index: 1;
   height: 0;
   bottom: 0;
+}
+
+.item.next img {
+  bottom: 0;
+}
+
+.scroll-up .prev {
+  height: 100%;
+}
+
+.scroll-down .next {
+  height: 100%;
+}
+
+.scroll-up .current img {
+  transform: translateY(10%);
+}
+
+.scroll-down .current img {
+  transform: translateY(-10%);
 }
 </style>
